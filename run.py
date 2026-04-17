@@ -1,15 +1,13 @@
 from config import client,tree,my_token
-from db import scheduler, set_schedule
-import bot_command
+from Scheduler import setup_scheduler
+import bot_command as bot_command
 started = False
-
 @client.event
 async def on_ready():
     global started
 
     if not started:
-        set_schedule()
-        scheduler.start()
+        setup_scheduler(client)
         started = True
 
     synced = await tree.sync()
