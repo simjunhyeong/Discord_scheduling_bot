@@ -2,7 +2,6 @@ from config import client,tree,my_token
 from db import scheduler, set_schedule
 import bot_command
 started = False
-print(my_token)
 @client.event
 async def on_ready():
     global started
