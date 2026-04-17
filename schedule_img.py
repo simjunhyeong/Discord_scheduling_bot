@@ -14,8 +14,12 @@ def get_day_color(count):
 def create_schedule_image(db, guild, selected_day=None):
     days = [selected_day] if selected_day else WEEK_ORDER
 
-    font = ImageFont.truetype("malgun.ttf", 24)  # 윈도우 기본
-    small_font = ImageFont.truetype("malgun.ttf", 20)
+    try:
+        font = ImageFont.truetype("fonts/malgun.ttf", 24)
+        small_font = ImageFont.truetype("fonts/malgun.ttf", 20)
+    except:
+        font = ImageFont.load_default()
+        small_font = ImageFont.load_default()
 
     day_count = {}
 
