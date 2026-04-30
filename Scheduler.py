@@ -14,7 +14,7 @@ def setup_scheduler(bot):
         start_schedule,
         "cron",
         day_of_week="wed",
-        hour=10,
+        hour=1,
         minute=0,
         args=[bot]
     )
@@ -23,7 +23,7 @@ def setup_scheduler(bot):
         end_schedule,
         "cron",
         day_of_week="wed",
-        hour=18,
+        hour=9,
         minute=0,
         args=[bot]
     )
